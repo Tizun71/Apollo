@@ -17,31 +17,31 @@ class SearchPage extends StatelessWidget {
             SizedBox(height: 20),
             searchSection(size, context),
             SizedBox(height: 20),
-            Container(
-                child: GridView.count(
-              padding: EdgeInsets.all(8),
-              crossAxisCount: 2,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              childAspectRatio: 0.8,
-              shrinkWrap: true,
-              physics:
-                  NeverScrollableScrollPhysics(), // Vô hiệu hóa scroll bên trong GridView
-              children: List.generate(latestProducts.length, (index) {
-                final items = latestProducts[index];
-                return Padding(
-                  padding: index == 0
-                      ? EdgeInsets.symmetric(horizontal: 20)
-                      : EdgeInsets.only(right: 20),
-                  child: InkWell(
-                      onTap: () {},
-                      child: LatestProduct(
-                        items: items,
-                        size: size,
-                      )),
-                );
-              }),
-            ))
+            // Container(
+            //     child: GridView.count(
+            //   padding: EdgeInsets.all(8),
+            //   crossAxisCount: 2,
+            //   crossAxisSpacing: 10,
+            //   mainAxisSpacing: 10,
+            //   childAspectRatio: 0.8,
+            //   shrinkWrap: true,
+            //   physics:
+            //       NeverScrollableScrollPhysics(), // Vô hiệu hóa scroll bên trong GridView
+            //   children: List.generate(latestProducts.length, (index) {
+            //     final items = latestProducts[index];
+            //     return Padding(
+            //       padding: index == 0
+            //           ? EdgeInsets.symmetric(horizontal: 20)
+            //           : EdgeInsets.only(right: 20),
+            //       child: InkWell(
+            //           onTap: () {},
+            //           child: LatestProduct(
+            //             items: items,
+            //             size: size,
+            //           )),
+            //     );
+            //   }),
+            // ))
           ],
         ),
       ),
@@ -69,13 +69,13 @@ class SearchPage extends StatelessWidget {
                 horizontal: 16,
               ),
               height: 50,
-              child: Icon(
-                Icons.filter_alt,
-                color: Colors.amber.withOpacity(0.6),
-              ),
               decoration: BoxDecoration(
                 color: Colors.white10,
                 borderRadius: BorderRadius.circular(15),
+              ),
+              child: Icon(
+                Icons.filter_alt,
+                color: Colors.amber.withOpacity(0.6),
               ),
             ),
           ),
@@ -90,6 +90,8 @@ class SearchPage extends StatelessWidget {
         horizontal: 16,
       ),
       width: size.width * 0.8,
+      decoration: BoxDecoration(
+          color: Colors.white10, borderRadius: BorderRadius.circular(15)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -114,8 +116,6 @@ class SearchPage extends StatelessWidget {
           )),
         ],
       ),
-      decoration: BoxDecoration(
-          color: Colors.white10, borderRadius: BorderRadius.circular(15)),
     );
   }
 

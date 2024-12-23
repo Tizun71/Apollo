@@ -27,7 +27,7 @@ class FeatureCollection extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${items.name}",
+              items.name,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,

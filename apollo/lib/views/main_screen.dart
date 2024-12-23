@@ -1,4 +1,4 @@
-import 'package:apollo/enums/color_codes.dart';
+import 'package:apollo/configdata/color_codes.dart';
 import 'package:apollo/screens/homepage.dart';
 import 'package:apollo/screens/profilepage.dart';
 import 'package:apollo/screens/searchpage.dart';

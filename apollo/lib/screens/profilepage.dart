@@ -16,16 +16,16 @@ class ProfilePage extends StatelessWidget {
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Container(
               width: 150,
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                      color: Colors.amber.withOpacity(0.5), width: 5.0)),
               child: CircleAvatar(
                 radius: 60,
                 backgroundColor: Colors.transparent,
                 backgroundImage: NetworkImage(
                     "https://yt3.ggpht.com/yti/ANjgQV_sTUVvISXZVjh7g7xAgClYUBG2iik0k3IFsatvX8zQ8AI=s88-c-k-c0x00ffffff-no-rj"),
               ),
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                      color: Colors.amber.withOpacity(0.5), width: 5.0)),
             ),
             SizedBox(
               height: 20,

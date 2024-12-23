@@ -1,10 +1,22 @@
-import 'package:apollo/enums/color_codes.dart';
+import 'package:apollo/configdata/color_codes.dart';
+import 'package:apollo/utils/categoryProvider.dart';
+import 'package:apollo/utils/productProvider.dart';
 import 'package:apollo/views/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (context) => CategoryProvider()),
+      ChangeNotifierProvider(create: (context) => ProductProvider()),
+    ],
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    ),
+  ));
 }
 
 class MyApp extends StatelessWidget {

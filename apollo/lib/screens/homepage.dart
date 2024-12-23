@@ -1,9 +1,9 @@
-import 'package:apollo/entity/category.dart';
 import 'package:apollo/entity/collection.dart';
 import 'package:apollo/entity/product.dart';
-import 'package:apollo/enums/color_codes.dart';
+import 'package:apollo/configdata/color_codes.dart';
+import 'package:apollo/widgets/category/category_list.dart';
 import 'package:apollo/widgets/feature_collection.dart';
-import 'package:apollo/widgets/latest_product.dart';
+import 'package:apollo/widgets/products/latest_product_list.dart';
 import 'package:apollo/widgets/promotionSlider.dart';
 import 'package:flutter/material.dart';
 
@@ -28,13 +28,13 @@ class _HomePageState extends State<HomePage> {
             PromotionSlider(),
             SizedBox(height: 20),
             sectionHeading("Danh Mục Sản Phẩm", false),
-            categoryList(),
+            CategoryList(),
             SizedBox(height: 20),
             Image.asset('assets/images/banner.jpg'),
             storyDescription(),
             SizedBox(height: 20),
             sectionHeading("Sản Phẩm Mới Ra Mắt", true),
-            latestProductList(size),
+            LatestProductList(),
             SizedBox(height: 20),
             sectionHeading("Bộ Sưu Tập Nổi Bật!", true),
             featureCollectionList(size),
@@ -75,47 +75,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget categoryList() {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: List.generate(
-          categories.length,
-          (index) => Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: InkWell(
-              onTap: () {},
-              child: Column(
-                children: [
-                  Container(
-                    width: 70,
-                    height: 70,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: NetworkImage(categories[index].photo),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    categories[index].name,
-                    style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   Widget sectionHeading(
     String textValue,
     bool displaySeeAll,
@@ -145,27 +104,6 @@ class _HomePageState extends State<HomePage> {
             ),
         ],
       ),
-    );
-  }
-
-  Widget latestProductList(Size size) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-          children: List.generate(latestProducts.length, (index) {
-        final items = latestProducts[index];
-        return Padding(
-          padding: index == 0
-              ? EdgeInsets.symmetric(horizontal: 20)
-              : EdgeInsets.only(right: 20),
-          child: InkWell(
-              onTap: () {},
-              child: LatestProduct(
-                items: items,
-                size: size,
-              )),
-        );
-      })),
     );
   }
 

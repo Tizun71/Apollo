@@ -1,0 +1,140 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\visual studio\\webapi\\apollo_liteecommerce\\application\\modules\\product\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\product\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|d:\\visual studio\\webapi\\apollo_liteecommerce\\webapi\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\imagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|d:\\visual studio\\webapi\\apollo_liteecommerce\\webapi\\controllers\\categoryapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\categoryapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|d:\\visual studio\\webapi\\apollo_liteecommerce\\webapi\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{69AE2511-B617-459A-B37B-0B1BD5C46916}|Domain\\Domain.csproj|d:\\visual studio\\webapi\\apollo_liteecommerce\\domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{69AE2511-B617-459A-B37B-0B1BD5C46916}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{131944EE-E1F7-4855-8FDC-0EF39F1F0BFF}|EntityFramework\\EntityFramework.csproj|d:\\visual studio\\webapi\\apollo_liteecommerce\\entityframework\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{131944EE-E1F7-4855-8FDC-0EF39F1F0BFF}|EntityFramework\\EntityFramework.csproj|solutionrelative:entityframework\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 284,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ImageController.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\ImageController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ImageController.cs",
+              "ToolTip": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\ImageController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\ImageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwB0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:46:58.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryAPIController.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\CategoryAPIController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\CategoryAPIController.cs",
+              "ToolTip": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\CategoryAPIController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\CategoryAPIController.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAIwGkAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:45:43.227Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductAPIController.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\ProductAPIController.cs",
+              "RelativeDocumentMoniker": "WebAPI\\Controllers\\ProductAPIController.cs",
+              "ToolTip": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\ProductAPIController.cs",
+              "RelativeToolTip": "WebAPI\\Controllers\\ProductAPIController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:06:55.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "EntityFramework\\Repositories\\Repository.cs",
+              "ToolTip": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\Repositories\\Repository.cs",
+              "RelativeToolTip": "EntityFramework\\Repositories\\Repository.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAA4wEwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:04:10.398Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\Modules\\Product\\ProductService.cs",
+              "RelativeDocumentMoniker": "Application\\Modules\\Product\\ProductService.cs",
+              "ToolTip": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\Modules\\Product\\ProductService.cs",
+              "RelativeToolTip": "Application\\Modules\\Product\\ProductService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBcAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T13:03:36.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Entities\\Product.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Product.cs",
+              "ToolTip": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Entities\\Product.cs",
+              "RelativeToolTip": "Domain\\Entities\\Product.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T12:40:23.277Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 116,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

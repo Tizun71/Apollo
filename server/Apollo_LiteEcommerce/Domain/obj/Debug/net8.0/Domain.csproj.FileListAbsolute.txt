@@ -1,0 +1,12 @@
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\bin\Debug\net8.0\Domain.dll
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\bin\Debug\net8.0\Domain.pdb
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.dll
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.pdb
+D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\ref\Domain.dll
