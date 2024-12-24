@@ -41,6 +41,7 @@ dependencies:
   path_provider_android: ^2.2.15
   http: ^1.2.2
   provider: ^6.1.2
+  shared_preferences: ^2.1.0
 
 dev_dependencies:
   flutter_test:
