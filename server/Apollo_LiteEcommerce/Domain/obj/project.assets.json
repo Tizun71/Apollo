@@ -522,11 +522,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
+      "projectUniqueName": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
+      "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\gnud0\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\obj\\",
+      "outputPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gnud0\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,5 +1,6 @@
-import 'package:apollo/entity/productModel.dart';
+import 'package:apollo/screens/productdetailpage.dart';
 import 'package:apollo/utils/productProvider.dart';
+import 'package:apollo/widgets/products/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +31,11 @@ class _LatestProductListState extends State<LatestProductList> {
       scrollDirection: Axis.horizontal,
       child: Consumer<ProductProvider>(
         builder: (context, value, child) {
+          if (value.isLoading) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
           return Row(
             children: value.products.asMap().entries.map((e) {
               int index = e.key;
@@ -39,102 +45,20 @@ class _LatestProductListState extends State<LatestProductList> {
                     ? EdgeInsets.symmetric(horizontal: 20)
                     : EdgeInsets.only(right: 20),
                 child: InkWell(
-                  onTap: () {},
-                  child: latestProduct(product, size),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) =>
+                                ProductDetailPage(product: product)));
+                  },
+                  child: ProductCard(item: product, size: size),
                 ),
               );
             }).toList(),
           );
         },
       ),
-    );
-  }
-
-  Widget latestProduct(ProductModel item, Size size) {
-    return Column(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(item.photoLink ?? ''),
-            ),
-          ),
-          height: size.height * 0.25,
-          width: size.width * 0.5,
-          child: Padding(
-              padding: EdgeInsets.all(12),
-              child: (item.salePercentage ?? 0) > 0
-                  ? Align(
-                      alignment: Alignment.topLeft,
-                      child: Container(
-                        width: 80,
-                        height: 25,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.rectangle, color: Colors.red),
-                        child: Text(
-                          "${item.salePercentage}% OFF",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    )
-                  : SizedBox()),
-        ),
-        SizedBox(height: 7),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              item.name ?? '',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 11),
-            ),
-            Row(
-              children: [
-                salePriceText(item.price ?? 0, item.salePercentage ?? 0),
-                SizedBox(
-                  width: 5,
-                ),
-                (item.salePercentage ?? 0) > 0
-                    ? Text(
-                        "${formatCurrency.format(item.price ?? 0)} VND",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white54,
-                            decoration: TextDecoration.lineThrough,
-                            decorationColor: Colors.white54),
-                      )
-                    : SizedBox()
-              ],
-            ),
-            SizedBox(height: 16),
-            SizedBox(
-              width: size.width * 0.5,
-              child: MaterialButton(
-                onPressed: () {},
-                color: Colors.amber,
-                child: Text(
-                  "Thêm vào giỏ hàng",
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ),
-            )
-          ],
-        )
-      ],
-    );
-  }
-
-  Widget salePriceText(int price, int salePercentage) {
-    double salePrice = price * (1 - salePercentage / 100);
-    return Text(
-      "${formatCurrency.format(salePrice)} VND",
-      style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
     );
   }
 }

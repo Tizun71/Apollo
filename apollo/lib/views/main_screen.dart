@@ -1,5 +1,7 @@
 import 'package:apollo/configdata/color_codes.dart';
+import 'package:apollo/screens/cartpage.dart';
 import 'package:apollo/screens/homepage.dart';
+import 'package:apollo/screens/productdetailpage.dart';
 import 'package:apollo/screens/profilepage.dart';
 import 'package:apollo/screens/searchpage.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,7 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 3;
   final List pages = [
-    const HomePage(),
+    const CartPage(),
     const SearchPage(),
     const Scaffold(),
     const ProfilePage(),
@@ -59,7 +61,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           Icon(
             Icons.person,
-            color: Colors.white,
+            color: Colors.black,
           ),
           Image.asset('assets/images/logo.png'),
           Stack(

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj": {}
+    "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\Application.csproj": {
+    "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\Application.csproj",
+        "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\gnud0\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\obj\\",
+        "outputPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gnud0\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj"
+              "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj"
               }
             }
           }
@@ -57,6 +57,10 @@
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
               "version": "[2.2.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.3.0, )"
             }
           },
           "imports": [
@@ -79,14 +83,14 @@
         }
       }
     },
-    "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj": {
+    "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\gnud0\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\obj\\",
+        "outputPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gnud0\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -146,14 +150,14 @@
         }
       }
     },
-    "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj": {
+    "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj",
+        "projectUniqueName": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj",
         "projectName": "EntityFramework",
-        "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj",
+        "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj",
         "packagesPath": "C:\\Users\\gnud0\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\obj\\",
+        "outputPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gnud0\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -171,11 +175,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\Application.csproj": {
-                "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Application\\Application.csproj"
+              "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Application.csproj": {
+                "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Application.csproj"
               },
-              "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj"
+              "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj"
               }
             }
           }
@@ -230,14 +234,14 @@
         }
       }
     },
-    "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj": {
+    "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj",
+        "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\WebAPI.csproj",
         "packagesPath": "C:\\Users\\gnud0\\.nuget\\packages\\",
-        "outputPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\WebAPI\\obj\\",
+        "outputPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gnud0\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -255,8 +259,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj": {
-                "projectPath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj"
+              "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj": {
+                "projectPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\EntityFramework.csproj"
               }
             }
           }
@@ -276,6 +280,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"

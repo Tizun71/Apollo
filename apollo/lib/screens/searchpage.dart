@@ -1,9 +1,20 @@
-import 'package:apollo/entity/product.dart';
-import 'package:apollo/widgets/latest_product.dart';
+import 'package:apollo/widgets/products/search_product_list.dart';
 import 'package:flutter/material.dart';
 
-class SearchPage extends StatelessWidget {
+class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
+
+  @override
+  State<SearchPage> createState() => _SearchPageState();
+}
+
+class _SearchPageState extends State<SearchPage> {
+  String value = '';
+  void filterData(String searchValue) {
+    setState(() {
+      value = searchValue;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,31 +28,9 @@ class SearchPage extends StatelessWidget {
             SizedBox(height: 20),
             searchSection(size, context),
             SizedBox(height: 20),
-            // Container(
-            //     child: GridView.count(
-            //   padding: EdgeInsets.all(8),
-            //   crossAxisCount: 2,
-            //   crossAxisSpacing: 10,
-            //   mainAxisSpacing: 10,
-            //   childAspectRatio: 0.8,
-            //   shrinkWrap: true,
-            //   physics:
-            //       NeverScrollableScrollPhysics(), // Vô hiệu hóa scroll bên trong GridView
-            //   children: List.generate(latestProducts.length, (index) {
-            //     final items = latestProducts[index];
-            //     return Padding(
-            //       padding: index == 0
-            //           ? EdgeInsets.symmetric(horizontal: 20)
-            //           : EdgeInsets.only(right: 20),
-            //       child: InkWell(
-            //           onTap: () {},
-            //           child: LatestProduct(
-            //             items: items,
-            //             size: size,
-            //           )),
-            //     );
-            //   }),
-            // ))
+            SearchProductList(
+              searchValue: value,
+            )
           ],
         ),
       ),
@@ -85,6 +74,7 @@ class SearchPage extends StatelessWidget {
   }
 
   Widget searchBoxItem(Size size) {
+    TextEditingController _searchController = TextEditingController();
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 16,
@@ -105,7 +95,11 @@ class SearchPage extends StatelessWidget {
           ),
           Expanded(
               child: TextField(
+            controller: _searchController,
             showCursor: true,
+            onSubmitted: (value) {
+              filterData(value);
+            },
             cursorColor: Colors.amber,
             style: TextStyle(color: Colors.amber),
             decoration: InputDecoration(

@@ -10,3 +10,16 @@ D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.dll
 D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\refint\Domain.dll
 D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.pdb
 D:\Visual Studio\WebAPI\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\ref\Domain.dll
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\bin\Debug\net8.0\Domain.deps.json
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\bin\Debug\net8.0\Domain.dll
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\bin\Debug\net8.0\Domain.pdb
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.csproj.AssemblyReference.cache
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.dll
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\refint\Domain.dll
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\Domain.pdb
+D:\Personal Project\Flutter\ApolloEcommerce\server\Apollo_LiteEcommerce\Domain\obj\Debug\net8.0\ref\Domain.dll

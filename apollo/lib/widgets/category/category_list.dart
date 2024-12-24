@@ -24,6 +24,11 @@ class _CategoryListState extends State<CategoryList> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Consumer<CategoryProvider>(builder: (context, value, child) {
+        if (value.isLoading) {
+          return Center(
+            child: CircularProgressIndicator(),
+          );
+        }
         return Row(
           children: value.categories.map((e) {
             return Padding(

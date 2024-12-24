@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TlFwn2BBB8M=",
+  "dgSpecHash": "3QM7MB29s6g=",
   "success": true,
-  "projectFilePath": "D:\\Visual Studio\\WebAPI\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
+  "projectFilePath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gnud0\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\gnud0\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
