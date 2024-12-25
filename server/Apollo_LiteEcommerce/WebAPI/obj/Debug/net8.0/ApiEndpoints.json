@@ -199,6 +199,43 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPI.Controllers.OrderController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/Order/GetAllOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.OrderController",
+    "Method": "InvokeOrder",
+    "RelativePath": "api/Order/InvokeOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "products",
+        "Type": "System.Collections.Generic.List\u00601[[Application.Modules.Order.OrderDetailDTO, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.ProductAPIController",
     "Method": "CreateProduct",
     "RelativePath": "api/ProductAPI/CreateProduct",

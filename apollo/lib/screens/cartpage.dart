@@ -1,4 +1,8 @@
+import 'package:apollo/entity/Cart.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+final formatCurrency = NumberFormat("#,##0", "vi_VN");
 
 class CartPage extends StatelessWidget {
   const CartPage({Key? key}) : super(key: key);
@@ -19,29 +23,7 @@ class ShoppingCartScreen extends StatefulWidget {
 }
 
 class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
-  final List<Map<String, dynamic>> _cartItems = [
-    {
-      'id': 1,
-      'name': 'Thiên Di Helios Silver',
-      'price': 360000,
-      'quantity': 1,
-      'image': 'https://via.placeholder.com/80'
-    },
-    {
-      'id': 2,
-      'name': 'Triarchy Helios Silver',
-      'price': 2450000,
-      'quantity': 1,
-      'image': 'https://via.placeholder.com/80'
-    },
-    {
-      'id': 3,
-      'name': 'Cuc Phuong Sunflower Earring Helios Black Silver',
-      'price': 360000,
-      'quantity': 1,
-      'image': 'https://via.placeholder.com/80'
-    },
-  ];
+  List<CartItem> _cartItems = ShoppingCart().getCart();
 
   void _removeItem(int index) {
     setState(() {
@@ -53,8 +35,12 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text("Giỏ hàng"),
         backgroundColor: Colors.black,
+        iconTheme: IconThemeData(
+          color: Colors.white,
+        ),
       ),
       body: Column(children: [
         Expanded(
@@ -68,13 +54,13 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                   itemBuilder: (context, index) {
                     final item = _cartItems[index];
                     return Dismissible(
-                      key: Key(item['id'].toString()),
+                      key: Key(item.product.id.toString()),
                       direction: DismissDirection.endToStart,
                       onDismissed: (direction) {
                         _removeItem(index);
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text('${item['name']} đã được xóa.'),
+                            content: Text('${item.product.name} đã được xóa.'),
                           ),
                         );
                       },
@@ -94,13 +80,13 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                         child: ListTile(
                           contentPadding: const EdgeInsets.all(10),
                           leading: Image.network(
-                            item['image'],
+                            item.product.photoLink ?? '',
                             fit: BoxFit.cover,
-                            width: 80,
-                            height: 80,
+                            width: 100,
+                            height: 100,
                           ),
                           title: Text(
-                            item['name'],
+                            item.product.name ?? '',
                             style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white),
@@ -109,7 +95,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "${item['price'].toString()} VND",
+                                "${formatCurrency.format(item.product.price ?? 0)} VND",
                                 style: const TextStyle(color: Colors.white70),
                               ),
                               Row(
@@ -117,8 +103,8 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                                   IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        if (item['quantity'] > 1) {
-                                          item['quantity']--;
+                                        if (item.quantity > 1) {
+                                          item.quantity--;
                                         }
                                       });
                                     },
@@ -126,13 +112,13 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                                         color: Colors.white),
                                   ),
                                   Text(
-                                    item['quantity'].toString(),
+                                    item.quantity.toString(),
                                     style: const TextStyle(color: Colors.white),
                                   ),
                                   IconButton(
                                     onPressed: () {
                                       setState(() {
-                                        item['quantity']++;
+                                        item.quantity++;
                                       });
                                     },
                                     icon: const Icon(Icons.add,
@@ -165,7 +151,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                   Text(
-                    "100 VND",
+                    ShoppingCart.getTotal().toString(),
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,

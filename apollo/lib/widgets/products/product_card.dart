@@ -1,3 +1,4 @@
+import 'package:apollo/entity/Cart.dart';
 import 'package:apollo/entity/productModel.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -11,6 +12,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ShoppingCart spc = ShoppingCart();
     return Column(
       children: [
         Container(
@@ -80,6 +82,7 @@ class ProductCard extends StatelessWidget {
               width: size.width * 0.5,
               child: MaterialButton(
                 onPressed: () {
+                  spc.addItemInCart(item);
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                     content: Text("Đã thêm Sản phẩm vào giỏ!"),
                     backgroundColor: Colors.amber.withOpacity(0.8),

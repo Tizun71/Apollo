@@ -1,4 +1,5 @@
 class ProductModel {
+  int? id;
   String? name;
   String? description;
   int? price;

@@ -12,7 +12,8 @@ namespace Application.Interfaces
         ICategoryRepository Category {  get; }
         IProductRepository Product { get; }
         IUserRepository User { get; }
-
         IRefreshTokenRepository RefreshToken { get; }
+        IOrderRepository Order { get; }
+        IOrderDetailRepository OrderDetail { get; }
     }
 }

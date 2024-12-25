@@ -9,10 +9,12 @@ class CartItem {
 }
 
 class ShoppingCart {
-  List<CartItem> items;
-  CartItem? lastAddedItem;
+  static List<CartItem> items = [];
+  static CartItem? lastAddedItem;
 
-  ShoppingCart() : items = [];
+  List<CartItem> getCart() {
+    return items;
+  }
 
   void addItemInCart(ProductModel p, {int quantity = 1}) {
     for (var item in items) {
@@ -52,7 +54,7 @@ class ShoppingCart {
     items.clear();
   }
 
-  double getTotal() {
+  static double getTotal() {
     return items.fold(
         0, (sum, item) => sum + item.product.price! * item.quantity);
   }

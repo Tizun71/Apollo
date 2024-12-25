@@ -1,6 +1,7 @@
 using Application.Interfaces;
 using Application.Modules.Auth;
 using Application.Modules.Category;
+using Application.Modules.Order;
 using Application.Modules.Product;
 using EntityFramework.Data;
 using EntityFramework.Repositories;
@@ -25,6 +26,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 builder.Services.AddControllers();

@@ -18,7 +18,6 @@ namespace Application.Interfaces
         void Update(T entity);
         void Remove(T entity);
         void Save();
-
         bool IsExist(T entity);
     }
 }

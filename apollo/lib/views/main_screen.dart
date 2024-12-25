@@ -1,10 +1,12 @@
 import 'package:apollo/configdata/color_codes.dart';
 import 'package:apollo/screens/cartpage.dart';
 import 'package:apollo/screens/homepage.dart';
+import 'package:apollo/screens/loginpage.dart';
 import 'package:apollo/screens/productdetailpage.dart';
 import 'package:apollo/screens/profilepage.dart';
 import 'package:apollo/screens/searchpage.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,7 +16,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int selectedIndex = 3;
+  int selectedIndex = 0;
   final List pages = [
     const HomePage(),
     const SearchPage(),
@@ -35,9 +37,17 @@ class _MainScreenState extends State<MainScreen> {
         selectedItemColor: Colors.amber,
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
-        onTap: (value) {
-          setState(() {});
-          selectedIndex = value;
+        onTap: (value) async {
+          SharedPreferences prefs = await SharedPreferences.getInstance();
+          var token = prefs.getString('jwt_token');
+          if (value == 3 && token == null) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => LoginPage()));
+          } else {
+            setState(() {
+              selectedIndex = value;
+            });
+          }
         },
         elevation: 0,
         backgroundColor: themeColor,
@@ -66,10 +76,24 @@ class _MainScreenState extends State<MainScreen> {
           Image.asset('assets/images/logo.png'),
           Stack(
             children: [
-              Icon(
-                Icons.shopping_bag_outlined,
-                size: 28,
-                color: Colors.white,
+              GestureDetector(
+                onTap: () async {
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  var token = prefs.getString('jwt_token');
+                  if (token == null) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (_) => LoginPage()));
+                  } else {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => CartPage()));
+                  }
+                },
+                child: Icon(
+                  Icons.shopping_bag_outlined,
+                  size: 28,
+                  color: Colors.white,
+                ),
               ),
               Positioned(
                   right: 0,

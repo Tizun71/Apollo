@@ -1,7 +1,23 @@
+import 'package:apollo/screens/loginpage.dart';
+import 'package:apollo/services/authService.dart';
 import 'package:flutter/material.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  final AuthService authService = AuthService();
+
+  Future<void> _logout() async {
+    await authService.logout();
+
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +70,77 @@ class ProfilePage extends StatelessWidget {
             Text(
               'tizun0701@gmail.com',
               style: TextStyle(color: Colors.white),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            SizedBox(
+              width: size.width,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  profileItem(
+                      'Cài Đặt',
+                      Icon(
+                        Icons.settings,
+                        color: Colors.white,
+                        size: 24,
+                      )),
+                  profileItem(
+                      'Đăng xuất',
+                      Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                        size: 24,
+                      )),
+                ],
+              ),
             )
           ]),
+        ),
+      ),
+    );
+  }
+
+  Widget profileItem(String name, Icon icon) {
+    return GestureDetector(
+      onTap: () {
+        if (name == "Đăng xuất") {
+          _logout();
+        }
+      },
+      child: Container(
+        margin: EdgeInsets.all(5),
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+            border: Border.all(
+              color: Colors.amber.withOpacity(0.3),
+              width: 1,
+            ),
+            borderRadius: BorderRadius.circular(10)),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                icon,
+                SizedBox(
+                  width: 16,
+                ),
+                Text(
+                  name,
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w600),
+                )
+              ],
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.white,
+            )
+          ],
         ),
       ),
     );

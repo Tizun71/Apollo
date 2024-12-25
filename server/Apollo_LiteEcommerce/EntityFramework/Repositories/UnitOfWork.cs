@@ -19,6 +19,10 @@ namespace EntityFramework.Repositories
 
         public IRefreshTokenRepository RefreshToken { get; private set; }
 
+        public IOrderRepository Order { get; private set; }
+
+        public IOrderDetailRepository OrderDetail { get; private set; }
+
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
@@ -26,6 +30,8 @@ namespace EntityFramework.Repositories
             Product = new ProductRepository(_context);
             User = new UserRepository(_context);
             RefreshToken = new RefreshTokenRepository(_context);
+            Order = new OrderRepository(_context);
+            OrderDetail = new OrderDetailRepository(_context);  
         }
     }
 }
