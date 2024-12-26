@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Domain.Constants;
 using Domain.Entities;
 using Domain.Models;
 using System;
@@ -21,6 +22,11 @@ namespace Application.Modules.Order
         public async Task<IEnumerable<Domain.Entities.Order>> GetAllAsync(int userId)
         {
             return await _unitOfWork.Order.List(o => o.UserID == userId);
+        }
+
+        public async Task<Domain.Entities.Order> GetByIDAsync(int orderId)
+        {
+            return await _unitOfWork.Order.GetAsync(o => o.OrderID == orderId);
         }
 
         public ApiResponse InvokeOrder(int userId, List<OrderDetailDTO> products)
@@ -54,7 +60,7 @@ namespace Application.Modules.Order
             {
                 CreatedDate =  DateTime.UtcNow,
                 UserID = userId,
-                Status = 0,
+                Status = (int) OrderStatus.PENDING,
                 Amount = amount
             };
 
@@ -73,6 +79,83 @@ namespace Application.Modules.Order
                 _unitOfWork.OrderDetail.Save();
             }
             return new ApiResponse 
+            {
+                Success = true,
+            };
+        }
+
+        public ApiResponse ConfirmOrder(Domain.Entities.Order order)
+        {
+            if (order.Status != (int) OrderStatus.PENDING)
+            {
+                return new ApiResponse
+                {
+                    Success = false,
+                    Message = "Order status isn't pending"
+                };
+            }
+
+            order.Status = (int)OrderStatus.PROCESSING;
+            _unitOfWork.Order.Update(order);
+            _unitOfWork.Order.Save();
+            return new ApiResponse
+            {
+                Success = true,
+            };
+        }
+
+        public ApiResponse DeliveryOrder(Domain.Entities.Order order)
+        {
+            if (order.Status != (int)OrderStatus.PROCESSING)
+            {
+                return new ApiResponse
+                {
+                    Success = false,
+                    Message = "Order status isn't processing"
+                };
+            }
+            order.Status = (int)OrderStatus.DELIVERING;
+            _unitOfWork.Order.Update(order);
+            _unitOfWork.Order.Save();
+            return new ApiResponse
+            {
+                Success = true,
+            };
+        }
+
+        public ApiResponse ReceiveOrder(Domain.Entities.Order order)
+        {
+            if (order.Status != (int)OrderStatus.DELIVERING)
+            {
+                return new ApiResponse
+                {
+                    Success = false,
+                    Message = "Order status isn't delivering"
+                };
+            }
+            order.Status = (int) OrderStatus.COMPLETED;
+            _unitOfWork.Order.Update(order);
+            _unitOfWork.Order.Save();
+            return new ApiResponse
+            {
+                Success = true,
+            };
+        }
+
+        public ApiResponse CancelOrder(Domain.Entities.Order order)
+        {
+            if (order.Status != (int)OrderStatus.PENDING || order.Status != (int) OrderStatus.PROCESSING)
+            {
+                return new ApiResponse
+                {
+                    Success = false,
+                    Message = "Order status isn't pending or processing"
+                };
+            }
+            order.Status = (int)OrderStatus.CANCELED;
+            _unitOfWork.Order.Update(order);
+            _unitOfWork.Order.Save();
+            return new ApiResponse
             {
                 Success = true,
             };

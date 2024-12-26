@@ -114,11 +114,14 @@ namespace Application.Modules.Auth
                 if (validatedToken is JwtSecurityToken jwtSecurityToken)
                 {
                     var result = jwtSecurityToken.Header.Alg.Equals(SecurityAlgorithms.HmacSha256, StringComparison.InvariantCultureIgnoreCase);
-                    return new ApiResponse
+                    if (!result)
                     {
-                        Success = false,
-                        Message = "Invalid token"
-                    };
+                        return new ApiResponse
+                        {
+                            Success = false,
+                            Message = "Invalid token"
+                        };
+                    }
                 }
 
                 //check 3: check accessToken expire?

@@ -38,5 +38,65 @@ namespace WebAPI.Controllers
                 orders = result
             });
         }
+
+        [HttpPost]
+        public async Task<IActionResult> ConfirmOrder(int orderId)
+        {
+            var order = await _orderService.GetByIDAsync(orderId);
+            if (order == null)
+            {
+                return Ok(new
+                {
+                    Success = false,
+                    Message = "Order isn't exist"
+                });
+            }
+            return Ok(_orderService.ConfirmOrder(order));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeliveryOrder(int orderId)
+        {
+            var order = await _orderService.GetByIDAsync(orderId);
+            if (order == null)
+            {
+                return Ok(new
+                {
+                    Success = false,
+                    Message = "Order isn't exist"
+                });
+            }
+            return Ok(_orderService.DeliveryOrder(order));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ReceiveOrder(int orderId)
+        {
+            var order = await _orderService.GetByIDAsync(orderId);
+            if (order == null)
+            {
+                return Ok(new
+                {
+                    Success = false,
+                    Message = "Order isn't exist"
+                });
+            }
+            return Ok(_orderService.ReceiveOrder(order));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CancelOrder(int orderId)
+        {
+            var order = await _orderService.GetByIDAsync(orderId);
+            if (order == null)
+            {
+                return Ok(new
+                {
+                    Success = false,
+                    Message = "Order isn't exist"
+                });
+            }
+            return Ok(_orderService.CancelOrder(order));
+        }
     }
 }
