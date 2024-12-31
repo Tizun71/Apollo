@@ -10,8 +10,8 @@ namespace Application.Modules.Auth
 {
     public interface IAuthService
     {
-        Task<User> GetUserAsync(Domain.Entities.Auth auth);
-        TokenModel GenerateToken(User user);
+        Task<Domain.Entities.User> GetUserAsync(Domain.Entities.Auth auth);
+        TokenModel GenerateToken(Domain.Entities.User user);
         string GenerateRefreshToken();
         ApiResponse RenewToken(TokenModel token);
     }

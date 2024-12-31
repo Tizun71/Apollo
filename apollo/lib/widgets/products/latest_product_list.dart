@@ -1,5 +1,5 @@
 import 'package:apollo/screens/productdetailpage.dart';
-import 'package:apollo/utils/productProvider.dart';
+import 'package:apollo/provirders/productProvider.dart';
 import 'package:apollo/widgets/products/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

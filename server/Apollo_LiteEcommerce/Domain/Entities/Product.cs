@@ -28,7 +28,7 @@ namespace Domain.Entities
         public IFormFile ImageFile { get; set; }
 
         public int? CategoryID { get; set; }
-        //[ForeignKey("CategoryID")]
-        //public Category? Category { get; set; }
+        [ForeignKey("CategoryID")]
+        public Category? Category { get; set; }
     }
 }

@@ -10,6 +10,7 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   String value = '';
+  TextEditingController _searchController = TextEditingController(text: '');
   void filterData(String searchValue) {
     setState(() {
       value = searchValue;
@@ -74,7 +75,6 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   Widget searchBoxItem(Size size) {
-    TextEditingController _searchController = TextEditingController();
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 16,

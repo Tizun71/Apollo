@@ -11,8 +11,9 @@ namespace Application.Modules.Order
     public interface IOrderService
     {
         Task<IEnumerable<Domain.Entities.Order>> GetAllAsync(int userId);
+        Task<IEnumerable<OrderDetailDTO>> GetOrderDetailByIdAsync(int orderId);
         Task<Domain.Entities.Order> GetByIDAsync(int orderId);
-        ApiResponse InvokeOrder(int userId, List<OrderDetailDTO> products);
+        ApiResponse InvokeOrder(int userId, string? note, List<OrderDetailDTO> products);
         ApiResponse ConfirmOrder(Domain.Entities.Order order);
         ApiResponse DeliveryOrder(Domain.Entities.Order order);
         ApiResponse ReceiveOrder(Domain.Entities.Order order);

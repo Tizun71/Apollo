@@ -1,4 +1,5 @@
 ﻿using Application.Modules.Order;
+using Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,22 +17,39 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult InvokeOrder(int userId, List<OrderDetailDTO> products)
+        public IActionResult InvokeOrder(int userId, string? note, List<OrderDetailDTO> products)
         {
-            return Ok(_orderService.InvokeOrder(userId, products));
+            return Ok(_orderService.InvokeOrder(userId, note, products));
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllOrders(int userId)
         {
+            string baseUrl = $"{Request.Scheme}://{Request.Host}";
             var data = await _orderService.GetAllAsync(userId);
-            var result = data.Select(order => new
+            var result = new List<object>();
+            foreach (var order in data)
             {
-                orderID = order.OrderID,
-                createdDate = order.CreatedDate.ToString("dd/MM/yyyy"),
-                status = order.Status,
-                amount = order.Amount
-            });
+                var orderDetailTask = await _orderService.GetOrderDetailByIdAsync(order.OrderID);
+                var orderDetails = orderDetailTask
+                .Select(detail => new {
+                    photoLink = detail.ProductItem.ImageUrl != null ? baseUrl + Url.Action("GetImage", "Image", new { fileName = detail.ProductItem.ImageUrl }) : null,
+                    detail.ProductItem.ProductName,
+                    detail.Quantity,
+                    detail.ProductItem.ProductPrice
+                });
+            
+                result.Add(new
+                {
+                    orderID = order.OrderID,
+                    createdDate = order.CreatedDate.ToString("dd/MM/yyyy"),
+                    status = order.Status,
+                    amount = order.Amount,
+                    note = order.Note,
+                    orderDetails 
+                });
+            }
+
             return Ok(new
             {
                 status = "ok",

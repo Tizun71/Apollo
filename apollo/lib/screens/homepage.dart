@@ -1,4 +1,3 @@
-import 'package:apollo/entity/Cart.dart';
 import 'package:apollo/entity/collection.dart';
 import 'package:apollo/configdata/color_codes.dart';
 import 'package:apollo/widgets/category/category_list.dart';

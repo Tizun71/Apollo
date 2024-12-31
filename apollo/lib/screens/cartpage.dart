@@ -1,4 +1,8 @@
 import 'package:apollo/entity/Cart.dart';
+
+import 'package:apollo/services/authService.dart';
+import 'package:apollo/services/orderService.dart';
+import 'package:apollo/views/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -23,7 +27,24 @@ class ShoppingCartScreen extends StatefulWidget {
 }
 
 class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
+  final OrderService orderService = OrderService();
+  final AuthService authService = AuthService();
+  final TextEditingController noteController = TextEditingController();
   List<CartItem> _cartItems = ShoppingCart().getCart();
+
+  Future<void> _invokeOrder() async {
+    int? userId = await authService.getUserIdFromToken();
+    if (userId == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Có lỗi xảy ra, vui lòng thử lại sau.')),
+      );
+      return;
+    }
+    await orderService.invokeOrder(userId, noteController.text);
+
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => MainScreen()));
+  }
 
   void _removeItem(int index) {
     setState(() {
@@ -36,8 +57,14 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Giỏ hàng"),
         backgroundColor: Colors.black,
+        title: Image.asset(
+          'assets/images/logo.png',
+          height: 40.0,
+          width: 120.0,
+          fit: BoxFit.contain,
+        ),
+        automaticallyImplyLeading: true,
         iconTheme: IconThemeData(
           color: Colors.white,
         ),
@@ -94,9 +121,26 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                           subtitle: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
-                                "${formatCurrency.format(item.product.price ?? 0)} VND",
-                                style: const TextStyle(color: Colors.white70),
+                              Row(
+                                children: [
+                                  salePriceText(item.product.price ?? 0,
+                                      item.product.salePercentage ?? 0),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  (item.product.salePercentage ?? 0) > 0
+                                      ? Text(
+                                          "${formatCurrency.format(item.product.price ?? 0)} VND",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.white54,
+                                              decoration:
+                                                  TextDecoration.lineThrough,
+                                              decorationColor: Colors.white54,
+                                              fontSize: 11),
+                                        )
+                                      : SizedBox()
+                                ],
                               ),
                               Row(
                                 children: [
@@ -143,6 +187,18 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              InkWell(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => MainScreen()),
+                  );
+                },
+                child: Text(
+                  'Quay về trang chủ',
+                  style: TextStyle(color: Colors.amber),
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -151,7 +207,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                     style: TextStyle(fontSize: 16, color: Colors.white),
                   ),
                   Text(
-                    ShoppingCart.getTotal().toString(),
+                    "${formatCurrency.format(ShoppingCart.getTotal())} VND",
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
@@ -161,7 +217,8 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                 ],
               ),
               const SizedBox(height: 10),
-              const TextField(
+              TextField(
+                controller: noteController,
                 maxLines: 3,
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
@@ -177,7 +234,9 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
               const SizedBox(height: 10),
               const SizedBox(height: 10),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  _invokeOrder();
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.amber,
                   minimumSize: const Size(double.infinity, 50),
@@ -192,6 +251,15 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
           ),
         ),
       ]),
+    );
+  }
+
+  Widget salePriceText(int price, int salePercentage) {
+    double salePrice = price * (1 - salePercentage / 100);
+    return Text(
+      "${formatCurrency.format(salePrice)} VND",
+      style: TextStyle(
+          fontWeight: FontWeight.bold, color: Colors.white, fontSize: 11),
     );
   }
 }

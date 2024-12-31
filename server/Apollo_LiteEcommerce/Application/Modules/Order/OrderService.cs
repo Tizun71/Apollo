@@ -3,6 +3,7 @@ using Domain.Constants;
 using Domain.Entities;
 using Domain.Models;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,15 +22,36 @@ namespace Application.Modules.Order
 
         public async Task<IEnumerable<Domain.Entities.Order>> GetAllAsync(int userId)
         {
-            return await _unitOfWork.Order.List(o => o.UserID == userId);
+            return await _unitOfWork.Order.List(
+                o => o.UserID == userId ,
+                query => query.OrderByDescending(o => o.OrderID)
+            );
         }
 
         public async Task<Domain.Entities.Order> GetByIDAsync(int orderId)
         {
             return await _unitOfWork.Order.GetAsync(o => o.OrderID == orderId);
         }
+        public async Task<IEnumerable<OrderDetailDTO>> GetOrderDetailByIdAsync(int orderId)
+        {
+            var orderDetailDtos = new List<OrderDetailDTO>(); 
+            var orderDetails = await _unitOfWork.OrderDetail.List(o => o.OrderID == orderId);
 
-        public ApiResponse InvokeOrder(int userId, List<OrderDetailDTO> products)
+            foreach (var orderDetail in orderDetails)
+            {
+                var product = await _unitOfWork.Product.GetAsync(p => p.ProductID == orderDetail.ProductID);
+                orderDetailDtos.Add(new OrderDetailDTO
+                {
+                    ProductID = orderDetail.ProductID,
+                    Quantity = orderDetail.Quantity,
+                    ProductItem = product,
+                });
+            }
+
+            return orderDetailDtos;
+        }
+
+        public ApiResponse InvokeOrder(int userId, string? note, List<OrderDetailDTO> products)
         {
             var user = _unitOfWork.User.Get(u => u.Id == userId);
             if (user == null)
@@ -53,7 +75,7 @@ namespace Application.Modules.Order
                         Message = "Product isn't exist"
                     };
                 }
-                amount = (int)(p.ProductPrice * product.Quantity);
+                amount += (int)(p.ProductPrice * product.Quantity * (1.0 - p.Sale / 100.0));
             }
 
             var order = new Domain.Entities.Order
@@ -61,7 +83,8 @@ namespace Application.Modules.Order
                 CreatedDate =  DateTime.UtcNow,
                 UserID = userId,
                 Status = (int) OrderStatus.PENDING,
-                Amount = amount
+                Amount = amount,
+                Note = note
             };
 
             _unitOfWork.Order.Add(order);

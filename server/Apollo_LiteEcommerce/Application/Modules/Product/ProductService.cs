@@ -20,7 +20,7 @@ namespace Application.Modules.Product
             if (sortType == "desc")
             {
                 lst = await _unitOfWork.Product.Paged(page, pageSize,
-                p =>    (string.IsNullOrEmpty(searchValue) || p.ProductName.Contains(searchValue)) &&
+                p =>    (string.IsNullOrEmpty(searchValue) || p.ProductName.Contains(searchValue) || p.Category.CategoryName.Contains(searchValue)) &&
                         (!categoryID.HasValue || p.CategoryID == categoryID),
                 query => query.OrderByDescending(p => p.ProductID)
                 );

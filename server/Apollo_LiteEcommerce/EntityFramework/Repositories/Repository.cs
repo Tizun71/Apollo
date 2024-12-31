@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Domain.Entities;
 using EntityFramework.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -60,12 +61,17 @@ namespace EntityFramework.Repositories
             return dbSet.Any(e => e.Equals(entity));
         }
 
-        public async Task<IEnumerable<T>> List(Expression<Func<T, bool>>? filter = null)
+        public async Task<IEnumerable<T>> List(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null)
         {
             IQueryable<T> query = _context.Set<T>();
             if (filter != null)
             {
                 query = query.Where(filter);
+            }
+
+            if (orderBy != null)
+            {
+                query = orderBy(query);
             }
 
             return await query.ToListAsync();

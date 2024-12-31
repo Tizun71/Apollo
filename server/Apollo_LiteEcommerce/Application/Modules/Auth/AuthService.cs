@@ -35,7 +35,7 @@ namespace Application.Modules.Auth
             return Convert.ToBase64String(random);
         }
 
-        public TokenModel GenerateToken(User user)
+        public TokenModel GenerateToken(Domain.Entities.User user)
         {
             var jwtTokenHandler = new JwtSecurityTokenHandler();
             var secretKeyBytes = Encoding.UTF8.GetBytes(_appSettings.secretKey);
@@ -54,7 +54,7 @@ namespace Application.Modules.Auth
 
                     new Claim("TokenId", Guid.NewGuid().ToString()),
                 }),
-                Expires = DateTime.UtcNow.AddMinutes(1),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(secretKeyBytes), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = jwtTokenHandler.CreateToken(tokenDescription);
@@ -83,7 +83,7 @@ namespace Application.Modules.Auth
             };
         }
 
-        public async Task<User> GetUserAsync(Domain.Entities.Auth auth)
+        public async Task<Domain.Entities.User> GetUserAsync(Domain.Entities.Auth auth)
         {
             return await _unitOfWork.User.GetAsync(u => u.UserName ==  auth.UserName && u.Password == auth.Password);
         }

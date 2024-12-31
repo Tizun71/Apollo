@@ -2,7 +2,8 @@ import 'package:apollo/configdata/color_codes.dart';
 import 'package:apollo/screens/cartpage.dart';
 import 'package:apollo/screens/homepage.dart';
 import 'package:apollo/screens/loginpage.dart';
-import 'package:apollo/screens/productdetailpage.dart';
+import 'package:apollo/screens/orderpage.dart';
+
 import 'package:apollo/screens/profilepage.dart';
 import 'package:apollo/screens/searchpage.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   final List pages = [
     const HomePage(),
     const SearchPage(),
-    const Scaffold(),
+    const OrderPage(),
     const ProfilePage(),
   ];
 

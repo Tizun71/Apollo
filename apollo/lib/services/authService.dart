@@ -1,12 +1,14 @@
 import 'dart:convert';
 
 import 'package:apollo/configdata/api_address.dart';
+
 import 'package:http/http.dart' as http;
+import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   Future<bool> login(String username, String password) async {
-    final String apiURL = "$hostAddress/api/User/Login";
+    final String apiURL = "$hostAddress/api/User/Vaildate/Login";
     var client = http.Client();
     var jsonString = await client.post(
       Uri.parse(apiURL),
@@ -35,5 +37,20 @@ class AuthService {
   Future<String?> getToken() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString('jwt_token');
+  }
+
+  Future<int?> getUserIdFromToken() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('jwt_token');
+
+    if (token == null || JwtDecoder.isExpired(token)) {
+      return null;
+    }
+
+    Map<String, dynamic> decodedToken = JwtDecoder.decode(token);
+    int? userId = decodedToken['Id'] != null
+        ? int.tryParse(decodedToken['Id'].toString())
+        : null;
+    return userId;
   }
 }

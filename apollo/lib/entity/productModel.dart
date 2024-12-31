@@ -7,7 +7,8 @@ class ProductModel {
   String? photoLink;
 
   ProductModel(
-      {this.name,
+      {this.id,
+      this.name,
       this.description,
       this.price,
       this.salePercentage,
@@ -15,6 +16,7 @@ class ProductModel {
 
   factory ProductModel.fromJson(Map<String, dynamic> obj) {
     return ProductModel(
+      id: obj['id'],
       name: obj['name'],
       description: obj['description'],
       price: obj['price'],

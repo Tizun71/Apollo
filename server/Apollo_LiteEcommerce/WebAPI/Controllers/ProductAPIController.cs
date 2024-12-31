@@ -25,6 +25,7 @@ namespace WebAPI.Controllers
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
             var result = data.Select(product => new
             {
+                id = product.ProductID,
                 name = product.ProductName,
                 description = product.ProductDescription,
                 price = product.ProductPrice,

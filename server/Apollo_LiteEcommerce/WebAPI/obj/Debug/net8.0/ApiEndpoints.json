@@ -276,6 +276,11 @@
         "IsRequired": false
       },
       {
+        "Name": "note",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
         "Name": "products",
         "Type": "System.Collections.Generic.List\u00601[[Application.Modules.Order.OrderDetailDTO, Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
@@ -346,6 +351,36 @@
         "Name": "CategoryID",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
+      },
+      {
+        "Name": "Category.CategoryID",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category.CategoryName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category.Description",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category.ImageUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category.Products",
+        "Type": "System.Collections.Generic.ICollection\u00601[[Domain.Entities.Product, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Category.ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -398,16 +433,67 @@
   },
   {
     "ContainingType": "WebAPI.Controllers.UserController",
-    "Method": "Vaildate",
-    "RelativePath": "api/User/Login",
+    "Method": "ChangeUserProfile",
+    "RelativePath": "api/User/ChangeUserProfile/ChangeUserProfile",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "model",
-        "Type": "Domain.Entities.Auth",
-        "IsRequired": true
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "fullname",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "phone",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "address",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageUrl",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageFile",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.UserController",
+    "Method": "GetUser",
+    "RelativePath": "api/User/GetUser",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -415,7 +501,7 @@
   {
     "ContainingType": "WebAPI.Controllers.UserController",
     "Method": "RenewToken",
-    "RelativePath": "api/User/RenewToken",
+    "RelativePath": "api/User/RenewToken/RenewToken",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -423,6 +509,22 @@
       {
         "Name": "model",
         "Type": "Domain.Models.TokenModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.UserController",
+    "Method": "Vaildate",
+    "RelativePath": "api/User/Vaildate/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Domain.Entities.Auth",
         "IsRequired": true
       }
     ],

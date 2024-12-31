@@ -1,11 +1,17 @@
 import 'package:apollo/entity/productModel.dart';
-import 'package:flutter/material.dart';
 
 class CartItem {
   ProductModel product;
   int quantity;
 
   CartItem({required this.product, this.quantity = 1});
+
+  Map<String, dynamic> toMap() {
+    return {
+      'productID': product.id,
+      'quantity': quantity,
+    };
+  }
 }
 
 class ShoppingCart {
@@ -56,7 +62,12 @@ class ShoppingCart {
 
   static double getTotal() {
     return items.fold(
-        0, (sum, item) => sum + item.product.price! * item.quantity);
+        0,
+        (sum, item) =>
+            sum +
+            item.product.price! *
+                item.quantity *
+                (1 - item.product.salePercentage! / 100));
   }
 
   int getTotalQuantity() {
