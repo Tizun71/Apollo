@@ -41,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
         onTap: (value) async {
           SharedPreferences prefs = await SharedPreferences.getInstance();
           var token = prefs.getString('jwt_token');
-          if (value == 3 && token == null) {
+          if ((value == 2 || value == 3) && token == null) {
             Navigator.push(
                 context, MaterialPageRoute(builder: (_) => LoginPage()));
           } else {
@@ -55,8 +55,7 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Tìm kiếm"),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_active), label: "Thông báo"),
+          BottomNavigationBarItem(icon: Icon(Icons.list), label: "Đơn hàng"),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Tôi"),
         ],
       ),

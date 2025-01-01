@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:apollo/configdata/api_address.dart';
+import 'package:apollo/entity/userModel.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:jwt_decoder/jwt_decoder.dart';
@@ -23,6 +24,22 @@ class AuthService {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setString('jwt_token', token);
 
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  Future<bool> register(UserModel user, String password) async {
+    final String apiURL =
+        "$hostAddress/api/User/Register/RegisterAccount?username=${user.username}&fullname=${user.fullName}&password=${password}&email=${user.email}&phone=${user.phone}&address=${user.address}";
+    var client = http.Client();
+    var jsonString = await client.post(
+      Uri.parse(apiURL),
+      headers: {'Content-Type': 'application/json'},
+    );
+
+    if (jsonString.statusCode == 200) {
       return true;
     } else {
       return false;

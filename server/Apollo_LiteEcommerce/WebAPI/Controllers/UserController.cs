@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
             var user = await _authService.GetUserAsync(model);
             if (user == null)
             {
-                return Ok(new
+                return BadRequest(new
                 {
                     Success = false,
                     Message = "Invalid username / password"
@@ -43,6 +43,37 @@ namespace WebAPI.Controllers
                 Message = "Authenticate success",
                 Data = token
             });
+        }
+
+        [HttpPost("RegisterAccount")]
+        public async Task<IActionResult> Register(UserDTO model)
+        {
+            //check 1: username || password null
+            if (String.IsNullOrEmpty(model.username) || String.IsNullOrEmpty(model.password))
+            {
+                return BadRequest(new
+                {
+                    status = "ok",
+                    message = "Username or password isn't empty"
+                });
+            }
+
+            //check 2 : user exist
+            var user = _userService.GetUserByUsername(model.username);
+            if (user != null)
+            {
+                return BadRequest(new
+                {
+                    status = "ok",
+                    message = "Username is exist"
+                });
+            }
+            _userService.RegisterAccount(model);
+            return Ok(new
+            {
+                status = "ok",
+                message = "Register success",
+            });            
         }
 
         [HttpPost("RenewToken")]

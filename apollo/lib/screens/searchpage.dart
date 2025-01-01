@@ -1,3 +1,4 @@
+import 'package:apollo/configdata/color_codes.dart';
 import 'package:apollo/widgets/products/search_product_list.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: themeColor,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

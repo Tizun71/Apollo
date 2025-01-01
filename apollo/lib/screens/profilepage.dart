@@ -1,3 +1,4 @@
+import 'package:apollo/configdata/color_codes.dart';
 import 'package:apollo/entity/Cart.dart';
 import 'package:apollo/entity/userModel.dart';
 import 'package:apollo/screens/loginpage.dart';
@@ -41,6 +42,7 @@ class _ProfilePageState extends State<ProfilePage> {
           }
           UserModel user = snapshot.data!;
           return Scaffold(
+            backgroundColor: themeColor,
             body: SingleChildScrollView(
               child: Container(
                 padding: EdgeInsets.all(16),

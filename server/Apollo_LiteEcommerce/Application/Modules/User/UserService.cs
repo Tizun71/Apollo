@@ -1,4 +1,5 @@
 ﻿using Application.Interfaces;
+using Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,26 @@ namespace Application.Modules.User
         public Domain.Entities.User GetUserByID(int id)
         {
             return _unitOfWork.User.Get(u => u.Id == id);
+        }
+
+        public Domain.Entities.User GetUserByUsername(string username)
+        {
+            return _unitOfWork.User.Get(u => u.UserName == username);
+        }
+
+        public void RegisterAccount(UserDTO userDTO)
+        {
+            var user = new Domain.Entities.User
+            {
+                UserName = userDTO.username,
+                FullName = userDTO.fullname,
+                Email = userDTO.email,
+                Phone = userDTO.phone,
+                Address = userDTO.address,
+                Password = userDTO.password
+            };
+            _unitOfWork.User.Add(user);
+            _unitOfWork.User.Save();
         }
 
         public void UpdateProfile(Domain.Entities.User user)
