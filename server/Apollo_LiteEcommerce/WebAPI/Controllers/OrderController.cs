@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
                     photoLink = detail.ProductItem.ImageUrl != null ? baseUrl + Url.Action("GetImage", "Image", new { fileName = detail.ProductItem.ImageUrl }) : null,
                     detail.ProductItem.ProductName,
                     detail.Quantity,
-                    detail.ProductItem.ProductPrice
+                    productPrice = detail.ProductItem.ProductPrice * (1 - detail.ProductItem.Sale / 100.0)
                 });
             
                 result.Add(new

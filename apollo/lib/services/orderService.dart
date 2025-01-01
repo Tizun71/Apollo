@@ -12,7 +12,6 @@ class OrderService {
         "$hostAddress/api/Order/InvokeOrder?userId=$userId&note=$note";
 
     final body = jsonEncode(spc.getCart().map((item) => item.toMap()).toList());
-    print(body);
     var client = http.Client();
     var jsonString = await client.post(Uri.parse(apiURL),
         headers: {'Content-Type': 'application/json'}, body: body);
@@ -40,5 +39,18 @@ class OrderService {
     }
     return [];
     //throw "Something went wrong";
+  }
+
+  Future<bool> confirmOrder(int orderId) async {
+    final String apiURL =
+        "$hostAddress/api/Order/ReceiveOrder?orderId=${orderId}";
+    var client = http.Client();
+    var jsonString = await client.post(Uri.parse(apiURL));
+
+    if (jsonString.statusCode == 200) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

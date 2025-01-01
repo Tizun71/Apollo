@@ -1,5 +1,6 @@
 import 'package:apollo/services/authService.dart';
 import 'package:apollo/provirders/OrderProvider.dart';
+import 'package:apollo/services/orderService.dart';
 import 'package:apollo/widgets/orders/orderItem.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,11 +13,26 @@ class OrderPage extends StatefulWidget {
 }
 
 class _OrderPageState extends State<OrderPage> {
+  final OrderService orderService = OrderService();
   final AuthService authService = AuthService();
   @override
   void initState() {
     super.initState();
     _init();
+  }
+
+  Future<void> _confirmOrder(int orderId) async {
+    try {
+      await orderService.confirmOrder(orderId);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Xác nhận đơn hàng thành công')),
+      );
+      _init();
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Xác nhận đơn hàng thất bại: $e')),
+      );
+    }
   }
 
   Future<void> _init() async {
@@ -49,7 +65,11 @@ class _OrderPageState extends State<OrderPage> {
             var order = e.value;
             return InkWell(
               onTap: () {},
-              child: OrderItem(item: order, size: size),
+              child: OrderItem(
+                item: order,
+                size: size,
+                onConfirmOrder: _confirmOrder,
+              ),
             );
           }).toList(),
         ),

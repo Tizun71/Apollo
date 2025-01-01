@@ -129,7 +129,7 @@ namespace Application.Modules.Order
 
         public ApiResponse DeliveryOrder(Domain.Entities.Order order)
         {
-            if (order.Status != (int)OrderStatus.PROCESSING)
+            if (order.Status != (int) OrderStatus.PROCESSING)
             {
                 return new ApiResponse
                 {
@@ -137,7 +137,7 @@ namespace Application.Modules.Order
                     Message = "Order status isn't processing"
                 };
             }
-            order.Status = (int)OrderStatus.DELIVERING;
+            order.Status = (int) OrderStatus.DELIVERING;
             _unitOfWork.Order.Update(order);
             _unitOfWork.Order.Save();
             return new ApiResponse
