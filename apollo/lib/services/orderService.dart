@@ -18,8 +18,10 @@ class OrderService {
 
     if (jsonString.statusCode == 200) {
       spc.delete();
+      client.close();
       return true;
     } else {
+      client.close();
       return false;
     }
   }

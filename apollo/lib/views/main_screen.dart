@@ -95,21 +95,6 @@ class _MainScreenState extends State<MainScreen> {
                   color: Colors.white,
                 ),
               ),
-              Positioned(
-                  right: 0,
-                  top: -5,
-                  child: Container(
-                    padding: EdgeInsets.all(3),
-                    decoration: BoxDecoration(
-                        color: Colors.red, shape: BoxShape.circle),
-                    child: Center(
-                      child: Text(
-                        "3",
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ))
             ],
           )
         ],

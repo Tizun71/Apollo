@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\webapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\user\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,16 +19,24 @@
       "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\webapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\order\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|solutionrelative:application\\modules\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{131944EE-E1F7-4855-8FDC-0EF39F1F0BFF}|EntityFramework\\EntityFramework.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\entityframework\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{131944EE-E1F7-4855-8FDC-0EF39F1F0BFF}|EntityFramework\\EntityFramework.csproj|solutionrelative:entityframework\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\modules\\order\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +53,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\webapi\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7D03138F-35D8-48BE-A696-5689046FA527}|WebAPI\\WebAPI.csproj|solutionrelative:webapi\\controllers\\productapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{131944EE-E1F7-4855-8FDC-0EF39F1F0BFF}|EntityFramework\\EntityFramework.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\entityframework\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{131944EE-E1F7-4855-8FDC-0EF39F1F0BFF}|EntityFramework\\EntityFramework.csproj|solutionrelative:entityframework\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{10046E98-B0D5-477D-B6CC-D2DBF9C2546F}|Application\\Application.csproj|d:\\personal project\\flutter\\apolloecommerce\\server\\apollo_liteecommerce\\application\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,43 +114,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\UserService.cs",
-              "RelativeDocumentMoniker": "Application\\Modules\\User\\UserService.cs",
-              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\UserService.cs",
-              "RelativeToolTip": "Application\\Modules\\User\\UserService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T06:20:14.566Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\IUserService.cs",
-              "RelativeDocumentMoniker": "Application\\Modules\\User\\IUserService.cs",
-              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\IUserService.cs",
-              "RelativeToolTip": "Application\\Modules\\User\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T06:17:58.303Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IOrderService.cs",
-              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Order\\IOrderService.cs",
-              "RelativeDocumentMoniker": "Application\\Modules\\Order\\IOrderService.cs",
-              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Order\\IOrderService.cs",
-              "RelativeToolTip": "Application\\Modules\\Order\\IOrderService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:30:59.996Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "WebAPI\\Controllers\\OrderController.cs",
@@ -171,11 +135,12 @@
               "RelativeToolTip": "Application\\Modules\\Auth\\AuthService.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAqwMsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T03:43:02.644Z"
+              "WhenOpened": "2024-12-27T03:43:02.644Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Auth\\IAuthService.cs",
               "RelativeDocumentMoniker": "Application\\Modules\\Auth\\IAuthService.cs",
@@ -183,37 +148,64 @@
               "RelativeToolTip": "Application\\Modules\\Auth\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-27T03:42:15.631Z"
+              "WhenOpened": "2024-12-27T03:42:15.631Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "UserController.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "WebAPI\\Controllers\\UserController.cs",
               "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\UserController.cs",
               "RelativeToolTip": "WebAPI\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowDgAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAmwIQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T03:35:40.875Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "OrderService.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Order\\OrderService.cs",
               "RelativeDocumentMoniker": "Application\\Modules\\Order\\OrderService.cs",
               "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Order\\OrderService.cs",
               "RelativeToolTip": "Application\\Modules\\Order\\OrderService.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAcwIoAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAGUAAAAAAAAAAAAcwIoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-31T10:29:19.981Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\UserService.cs",
+              "RelativeDocumentMoniker": "Application\\Modules\\User\\UserService.cs",
+              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\UserService.cs",
+              "RelativeToolTip": "Application\\Modules\\User\\UserService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwCcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T06:20:14.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\IUserService.cs",
+              "RelativeDocumentMoniker": "Application\\Modules\\User\\IUserService.cs",
+              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\IUserService.cs",
+              "RelativeToolTip": "Application\\Modules\\User\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-01T06:17:58.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UserDTO.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\User\\UserDTO.cs",
               "RelativeDocumentMoniker": "Application\\Modules\\User\\UserDTO.cs",
@@ -221,11 +213,36 @@
               "RelativeToolTip": "Application\\Modules\\User\\UserDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-01T06:31:44.979Z"
+              "WhenOpened": "2025-01-01T06:31:44.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "EntityFramework\\Repositories\\Repository.cs",
+              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\Repositories\\Repository.cs",
+              "RelativeToolTip": "EntityFramework\\Repositories\\Repository.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAowEcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T10:54:23.795Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Order\\IOrderService.cs",
+              "RelativeDocumentMoniker": "Application\\Modules\\Order\\IOrderService.cs",
+              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Order\\IOrderService.cs",
+              "RelativeToolTip": "Application\\Modules\\Order\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-31T10:30:59.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "ProductService.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Application\\Modules\\Product\\ProductService.cs",
               "RelativeDocumentMoniker": "Application\\Modules\\Product\\ProductService.cs",
@@ -237,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ProductAPIController.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\WebAPI\\Controllers\\ProductAPIController.cs",
               "RelativeDocumentMoniker": "WebAPI\\Controllers\\ProductAPIController.cs",
@@ -246,18 +263,6 @@
               "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAACMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-27T03:44:03.71Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\Repositories\\Repository.cs",
-              "RelativeDocumentMoniker": "EntityFramework\\Repositories\\Repository.cs",
-              "ToolTip": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\EntityFramework\\Repositories\\Repository.cs",
-              "RelativeToolTip": "EntityFramework\\Repositories\\Repository.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAcwEcAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-31T10:54:23.795Z"
             },
             {
               "$type": "Document",
@@ -273,7 +278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\Personal Project\\Flutter\\ApolloEcommerce\\server\\Apollo_LiteEcommerce\\Domain\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "Domain\\Entities\\Product.cs",

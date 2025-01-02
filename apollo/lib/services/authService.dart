@@ -23,9 +23,10 @@ class AuthService {
 
       SharedPreferences prefs = await SharedPreferences.getInstance();
       await prefs.setString('jwt_token', token);
-
+      client.close();
       return true;
     } else {
+      client.close();
       return false;
     }
   }
@@ -40,8 +41,10 @@ class AuthService {
     );
 
     if (jsonString.statusCode == 200) {
+      client.close();
       return true;
     } else {
+      client.close();
       return false;
     }
   }

@@ -17,10 +17,60 @@ class _ProfilePageState extends State<ProfilePage> {
   final AuthService authService = AuthService();
   final UserService userService = UserService();
 
+  final TextEditingController fullnameController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
+
+  late Future<UserModel> _userFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _userFuture = _getUser();
+    _init();
+  }
+
+  void _reloadUserData() {
+    setState(() {
+      _userFuture = _getUser();
+    });
+  }
+
+  _init() async {
+    UserModel userModel = await _getUser();
+    fullnameController.text = userModel.fullName!;
+    addressController.text = userModel.address!;
+    emailController.text = userModel.email!;
+    phoneController.text = userModel.phone!;
+  }
+
   Future<UserModel> _getUser() async {
     int? userId = await authService.getUserIdFromToken();
     var user = await userService.getUser(userId!);
     return user!;
+  }
+
+  Future<void> _updateUser() async {
+    int? userId = await authService.getUserIdFromToken();
+    UserModel userModel = await _getUser();
+    userModel.fullName = fullnameController.text;
+    userModel.email = emailController.text;
+    userModel.address = addressController.text;
+    userModel.phone = phoneController.text;
+    bool success = await userService.updateProfile(userId!, userModel);
+    if (success) {
+      _reloadUserData();
+      Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Cập nhật thông tin thành công!')),
+      );
+    } else {
+      Navigator.pop(context);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Cập nhật thông tin thất bại!')),
+      );
+    }
   }
 
   Future<void> _logout() async {
@@ -35,7 +85,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return FutureBuilder<UserModel>(
-        future: _getUser(),
+        future: _userFuture,
         builder: (BuildContext context, AsyncSnapshot<UserModel> snapshot) {
           if (!snapshot.hasData) {
             return Center(child: CircularProgressIndicator());
@@ -61,7 +111,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: CircleAvatar(
                           radius: 60,
                           backgroundColor: Colors.transparent,
-                          backgroundImage: NetworkImage(user.photoLink ?? ''),
+                          backgroundImage: NetworkImage(user.photoLink ??
+                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ohhB35hNd0JDv4j3juY523JFYq7pZ2oqRsIqZDQnZc64tVaY-4KthOgRpoOdg8NHQ-8&usqp=CAU'),
                         ),
                       ),
                       SizedBox(
@@ -125,6 +176,15 @@ class _ProfilePageState extends State<ProfilePage> {
         if (name == "Đăng xuất") {
           spc.delete();
           _logout();
+        } else if (name == "Thay đổi thông tin tài khoản") {
+          showModalBottomSheet(
+            context: context,
+            isScrollControlled: true,
+            builder: (context) {
+              return FractionallySizedBox(
+                  heightFactor: 0.8, child: modalBottomItem());
+            },
+          );
         }
       },
       child: Container(
@@ -158,6 +218,95 @@ class _ProfilePageState extends State<ProfilePage> {
               Icons.arrow_forward_ios,
               color: Colors.white,
             )
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget modalBottomItem() {
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      decoration: BoxDecoration(color: const Color.fromARGB(244, 0, 0, 0)),
+      child: Center(
+        child: Column(
+          children: [
+            Text(
+              "THAY ĐỔI THÔNG TIN CÁ NHÂN",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            TextField(
+              controller: fullnameController,
+              cursorColor: Colors.amber,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.person_2_outlined),
+                border: OutlineInputBorder(),
+                hintText: 'Họ và tên',
+                hintStyle: TextStyle(color: Colors.white),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: addressController,
+              cursorColor: Colors.amber,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.location_city),
+                border: OutlineInputBorder(),
+                hintText: 'Địa chỉ',
+                hintStyle: TextStyle(color: Colors.white),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: phoneController,
+              cursorColor: Colors.amber,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.phone),
+                border: OutlineInputBorder(),
+                hintText: 'Số điện thoại',
+                hintStyle: TextStyle(color: Colors.white),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            TextField(
+              controller: emailController,
+              cursorColor: Colors.amber,
+              style: TextStyle(color: Colors.white),
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.email),
+                border: OutlineInputBorder(),
+                hintText: 'Email',
+                hintStyle: TextStyle(color: Colors.white),
+              ),
+            ),
+            const SizedBox(height: 40),
+            SizedBox(
+              width: double.infinity,
+              child: MaterialButton(
+                onPressed: _updateUser,
+                color: Colors.amber,
+                child: const Text(
+                  'Cập nhật thông tin',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600),
+                ),
+              ),
+            ),
           ],
         ),
       ),

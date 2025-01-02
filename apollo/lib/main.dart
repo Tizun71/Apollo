@@ -3,7 +3,6 @@ import 'package:apollo/configdata/color_codes.dart';
 import 'package:apollo/provirders/OrderProvider.dart';
 import 'package:apollo/provirders/categoryProvider.dart';
 import 'package:apollo/provirders/productProvider.dart';
-import 'package:apollo/screens/loginpage.dart';
 import 'package:apollo/views/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +17,7 @@ void main() {
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: MyApp(),
     ),
   ));
 }

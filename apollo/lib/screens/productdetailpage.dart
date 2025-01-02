@@ -1,6 +1,11 @@
+import 'package:apollo/configdata/color_codes.dart';
+import 'package:apollo/entity/Cart.dart';
 import 'package:apollo/entity/productModel.dart';
+import 'package:apollo/screens/cartpage.dart';
+import 'package:apollo/screens/loginpage.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final formatCurrency = NumberFormat("#,##0", "vi_VN");
 
@@ -13,6 +18,7 @@ class ProductDetailPage extends StatefulWidget {
 }
 
 class _ProductDetailPageState extends State<ProductDetailPage> {
+  ShoppingCart spc = ShoppingCart();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,6 +35,32 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
           iconTheme: IconThemeData(
             color: Colors.white,
           ),
+          actions: [
+            Stack(
+              children: [
+                GestureDetector(
+                  onTap: () async {
+                    SharedPreferences prefs =
+                        await SharedPreferences.getInstance();
+                    var token = prefs.getString('jwt_token');
+                    if (token == null) {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => LoginPage()));
+                    } else {
+                      Navigator.pop(context);
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => CartPage()));
+                    }
+                  },
+                  child: Icon(
+                    Icons.shopping_bag_outlined,
+                    size: 28,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            )
+          ],
         ),
         body: ListView(
           children: [
@@ -102,7 +134,14 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton.extended(
-          onPressed: () {},
+          onPressed: () {
+            spc.addItemInCart(widget.product);
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("Đã thêm Sản phẩm vào giỏ!"),
+              backgroundColor: Colors.amber.withOpacity(0.8),
+              duration: Duration(microseconds: 1000),
+            ));
+          },
           backgroundColor: Colors.black,
           elevation: 0,
           label: SizedBox(

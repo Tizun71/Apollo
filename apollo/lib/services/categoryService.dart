@@ -15,8 +15,10 @@ class Categoryservice {
       final categories = categoriesListObject.map((e) {
         return CategoryModel.fromJson(e);
       }).toList();
+      client.close();
       return categories;
     }
+    client.close();
     return [];
     //throw "Something went wrong";
   }

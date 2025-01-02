@@ -12,8 +12,33 @@ class UserService {
     if (jsonString.statusCode == 200) {
       var jsonObject = jsonDecode(jsonString.body);
       var userJson = jsonObject['user'];
+      client.close();
       return UserModel.fromJson(userJson);
     }
+    client.close();
     return null;
+  }
+
+  Future<bool> updateProfile(int userId, UserModel user) async {
+    final String apiURL =
+        "$hostAddress/api/User/ChangeUserProfile/ChangeUserProfile?userId=${userId}";
+    var client = http.Client();
+    var jsonString = await client.post(
+      Uri.parse(apiURL),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode({
+        'email': user.email,
+        'fullName': user.fullName,
+        'phone': user.phone,
+        'address': user.address
+      }),
+    );
+    client.close();
+
+    if (jsonString.statusCode == 200) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

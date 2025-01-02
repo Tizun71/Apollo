@@ -103,7 +103,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("ChangeUserProfile")]
-        public IActionResult ChangeUserProfile(int userId, [FromForm] UserDTO? model)
+        public IActionResult ChangeUserProfile(int userId, [FromBody] UserDTO? model)
         {
             if (model == null)
             {
@@ -112,11 +112,6 @@ namespace WebAPI.Controllers
             if (userId <= 0)
             {
                 return NotFound();
-            }
-            if (model.ImageFile != null && model.ImageFile.Length > 0)
-            {
-                string filename = new UploadHelper().UploadFile(model.ImageFile);
-                model.ImageUrl = filename;
             }
 
             var user = _userService.GetUserByID(userId);
@@ -136,15 +131,6 @@ namespace WebAPI.Controllers
             {
                 user.Phone = model.phone;
             }
-            if (model.address != null)
-            {
-                user.Address = model.address;
-            }
-            if (model.ImageUrl != null)
-            {
-                user.ImageUrl = model.ImageUrl;
-            }
-            
             _userService.UpdateProfile(user);
             return Ok(user);
         }

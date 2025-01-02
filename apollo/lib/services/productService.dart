@@ -28,8 +28,10 @@ class Productservice {
       final products = productsListObject.map((e) {
         return ProductModel.fromJson(e);
       }).toList();
+      client.close();
       return products;
     }
+    client.close();
     return [];
   }
 }
