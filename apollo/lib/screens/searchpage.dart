@@ -10,11 +10,13 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
+  String sort = 'desc';
   String value = '';
   TextEditingController _searchController = TextEditingController(text: '');
-  void filterData(String searchValue) {
+  void filterData(String searchValue, String sortType) {
     setState(() {
       value = searchValue;
+      sort = sortType;
     });
   }
 
@@ -33,6 +35,7 @@ class _SearchPageState extends State<SearchPage> {
             SizedBox(height: 20),
             SearchProductList(
               searchValue: value,
+              sort: sort,
             )
           ],
         ),
@@ -49,12 +52,17 @@ class _SearchPageState extends State<SearchPage> {
           searchBoxItem(size),
           GestureDetector(
             onTap: () {
-              showModalBottomSheet(
-                context: context,
-                builder: (context) {
-                  return modalBottomItem();
-                },
-              );
+              // showModalBottomSheet(
+              //   context: context,
+              //   builder: (context) {
+              //     return modalBottomItem();
+              //   },
+              // );
+              if (sort == 'desc')
+                sort = 'asc';
+              else
+                sort = 'desc';
+              filterData(value, sort);
             },
             child: Container(
               padding: EdgeInsets.symmetric(
@@ -66,7 +74,7 @@ class _SearchPageState extends State<SearchPage> {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Icon(
-                Icons.filter_alt,
+                Icons.sort_outlined,
                 color: Colors.amber.withOpacity(0.6),
               ),
             ),
@@ -100,7 +108,7 @@ class _SearchPageState extends State<SearchPage> {
             controller: _searchController,
             showCursor: true,
             onSubmitted: (value) {
-              filterData(value);
+              filterData(value, 'desc');
             },
             cursorColor: Colors.amber,
             style: TextStyle(color: Colors.amber),
@@ -121,7 +129,14 @@ class _SearchPageState extends State<SearchPage> {
       decoration: BoxDecoration(color: const Color.fromARGB(244, 0, 0, 0)),
       child: Center(
         child: Column(
-          children: [Text("Danh mục")],
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(height: 10),
+            Text(
+              'Danh mục',
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
         ),
       ),
     );

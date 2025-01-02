@@ -1,4 +1,5 @@
 import 'package:apollo/entity/userModel.dart';
+import 'package:apollo/main.dart';
 import 'package:apollo/services/authService.dart';
 import 'package:apollo/views/main_screen.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
         usernameController.text, passwordController.text);
     if (success) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MainScreen()));
+          context, MaterialPageRoute(builder: (context) => MyApp()));
     } else {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text("Đăng nhập thất bại!"),

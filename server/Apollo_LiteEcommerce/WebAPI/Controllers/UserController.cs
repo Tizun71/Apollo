@@ -92,6 +92,7 @@ namespace WebAPI.Controllers
                 status = "ok",
                 user = new
                 {
+                    password = user.Password,
                     username = user.UserName,
                     email = user.Email,
                     fullName = user.FullName,
@@ -115,10 +116,6 @@ namespace WebAPI.Controllers
             }
 
             var user = _userService.GetUserByID(userId);
-            if (model.password != null)
-            {
-                user.Password = model.password;
-            }
             if (model.fullname != null)
             {
                 user.FullName = model.fullname;
@@ -130,6 +127,10 @@ namespace WebAPI.Controllers
             if (model.phone != null)
             {
                 user.Phone = model.phone;
+            }
+            if (model.address != null)
+            {
+                user.Address = model.address;
             }
             _userService.UpdateProfile(user);
             return Ok(user);

@@ -25,6 +25,7 @@ namespace WebAPI.Controllers
             string baseUrl = $"{Request.Scheme}://{Request.Host}";
             var result = data.Select(category => new
             {
+                id = category.CategoryID,
                 name = category.CategoryName,
                 photoLink = category.ImageUrl != null ? baseUrl + Url.Action("GetImage", "Image", new { fileName = category.ImageUrl }) : null
             });

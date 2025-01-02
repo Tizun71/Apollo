@@ -22,7 +22,7 @@ namespace Application.Modules.Product
                 lst = await _unitOfWork.Product.Paged(page, pageSize,
                 p =>    (string.IsNullOrEmpty(searchValue) || p.ProductName.Contains(searchValue) || p.Category.CategoryName.Contains(searchValue)) &&
                         (!categoryID.HasValue || p.CategoryID == categoryID),
-                query => query.OrderByDescending(p => p.ProductID)
+                query => query.OrderByDescending(p => p.ProductPrice)
                 );
             }
             else
@@ -30,7 +30,7 @@ namespace Application.Modules.Product
                 lst = await _unitOfWork.Product.Paged(page, pageSize,
                 p =>    (string.IsNullOrEmpty(searchValue) || p.ProductName.Contains(searchValue)) &&
                         (!categoryID.HasValue || p.CategoryID == categoryID),
-                query => query.OrderBy(p => p.ProductID)
+                query => query.OrderBy(p => p.ProductPrice)
                 );
             }
             return lst;
